@@ -1,0 +1,26 @@
+{
+  "name": "sotp",
+  "version": "0.0.1",
+  "description": "Gestion d'authentification par OTP",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "otp",
+    "google",
+    "authenticator",
+    "qrcode",
+    "authentification",
+    "simple"
+  ],
+  "author": "Sika",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "notp": "^2.0.3",
+    "thirty-two": "^1.0.1"
+  }
+}
