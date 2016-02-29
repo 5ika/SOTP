@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sotp Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src='https://code.jquery.com/jquery-2.2.1.min.js'/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        var query = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        var msg = query[0].split('=')[1];
+        switch (msg) {
+          case 'loginfail':
+            $('#alert').text('Invalid token').addClass('alert-warning');
+            break;
+          case 'disconnected':
+            $('#alert').text('User disconnected').addClass('alert-success');
+            break;
+          default:
+            $('#alert').remove();
+        }
+      });
+    </script>
+    <style>
+      form {
+        width: 250px;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px 20px;
+        border: 1px solid #9E9E9E;
+        border-radius: 15px;
+        text-align: center;
+      }
+      button {
+        margin-top: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form action='/sotp/login' method="post">
+      <h1>Login</h1>
+      <div id='alert' class="alert"></div>
+      <input name='token' class='form-control' type='text' placeholder="Token"/>
+      <button type="submit" class="btn btn-block">Envoyer</button>
+    </form>
+  </body>
+</html>

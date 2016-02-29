@@ -9,7 +9,8 @@ module.exports = (secret, appName) => {
       return 'otpauth://totp/' + appName + '?secret=' + encodedForGoogle;
     },
     verifyToken: (token) => {
-      return notp.totp.verify(token, secret);
+      if(notp.totp.verify(token, secret)) return true;
+      else return false;
     },
     getToken: () => {
       return notp.totp.gen(secret);

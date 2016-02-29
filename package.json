@@ -1,10 +1,9 @@
 {
   "name": "sotp",
   "version": "0.0.1",
-  "description": "Gestion d'authentification par OTP",
+  "description": "OTP authentication management for Express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
   },
   "keywords": [
     "otp",
@@ -12,15 +11,18 @@
     "authenticator",
     "qrcode",
     "authentification",
-    "simple"
+    "simple",
+    "authentication",
+    "express",
+    "session"
   ],
   "author": "Sika",
   "license": "ISC",
-  "devDependencies": {
-    "chai": "^3.5.0"
-  },
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "client-sessions": "^0.7.0",
     "notp": "^2.0.3",
+    "qrcode-svg": "^0.9.0",
     "thirty-two": "^1.0.1"
   }
 }
